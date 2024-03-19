@@ -1,0 +1,12 @@
+import { usePrograms } from "hooks";
+import { Carousel } from "components";
+
+export default function Home() {
+  const programsData = usePrograms();
+
+  return (
+    <div>
+      <Carousel data={programsData} options={{}} />
+    </div>
+  );
+}
