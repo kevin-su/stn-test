@@ -39,4 +39,7 @@
 }
 
 .program-description {
+  @media screen and (min-width: 1080px) {
+    width: 40%;
+  }
 }
