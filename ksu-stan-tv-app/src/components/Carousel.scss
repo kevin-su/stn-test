@@ -6,6 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 .items-container {
@@ -21,7 +22,8 @@
   height: auto;
   width: 180px;
   border-radius: 5px;
-  background-color: lightgrey;
+  // background-color: lightgrey;
+  padding: 8px;
 
   img {
     width: 100%;

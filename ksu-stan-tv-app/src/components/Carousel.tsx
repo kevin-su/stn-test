@@ -3,58 +3,6 @@ import "./Carousel.scss";
 import { useEffect, useRef } from "react";
 
 export function Carousel({ children }: { children: any }) {
-  // const innerContainer = useRef(null);
-
-  // const parent = () => {
-  //   const el = useRef();
-
-  // useEffect(() => {
-  //   console.log(innerContainer.current);
-  //   if (innerContainer.current) {
-  //     console.log(Array.from(innerContainer.current.querySelectorAll("item")));
-  //     //       const scrollHandler = (e) => {
-  //     //         console.log(e);
-  //     //       };
-  //     //       el.current.addEventListener("scroll", scrollHandler);
-  //     //       return () => {
-  //     //         el.current.removeEventListener("scroll", scrollHandler);
-  //     //       };
-  //   }
-  // }, []);
-
-  //   return <Child ref={el} />;
-  // };
-
-  // useEffect(() => {
-  // const container: HTMLElement = document.querySelector(".container");
-  // const innerContainer: HTMLElement =
-  //   document.querySelector(".items-container");
-
-  // console.log(innerContainer, container);
-  // innerContainer.addEventListener("onkeydown", (e: any) => {
-  //   console.log(888);
-  // });
-
-  // // innerContainer.onkeydown = checkKey;
-
-  // container.addEventListener("onkeydown",
-
-  // (e: any)=> {
-  //   e = e || window.event;
-
-  //   if (e.keyCode == "38") {
-  //     // up arrow
-  //   } else if (e.keyCode == "40") {
-  //     // down arrow
-  //   } else if (e.keyCode == "37") {
-  //     // left arrow
-  //   } else if (e.keyCode == "39") {
-  //     // right arrow
-  //   }
-  // }
-  // })
-  // }, []);
-
   function handleArrowKeyNav(e: any): void {
     if (e.keyCode === "37") {
       console.log("left");
@@ -70,19 +18,71 @@ export function Carousel({ children }: { children: any }) {
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="container">
-  //     <div className="items-container" onKeyDown={handleArrowKeyNav}>
-  //       {data.map(({ image, id, title }: ProgramCardProps) => (
-  //         <div className="item" key={`carousel-${id}`}>
-  //           <ProgramCard id={id} image={image} title={title} />
-  //         </div>
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
 }
+
+// return (
+//   <div className="container">
+//     <div className="items-container" onKeyDown={handleArrowKeyNav}>
+//       {data.map(({ image, id, title }: ProgramCardProps) => (
+//         <div className="item" key={`carousel-${id}`}>
+//           <ProgramCard id={id} image={image} title={title} />
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+// );
+
+// const innerContainer = useRef(null);
+
+// const parent = () => {
+//   const el = useRef();
+
+// useEffect(() => {
+//   console.log(innerContainer.current);
+//   if (innerContainer.current) {
+//     console.log(Array.from(innerContainer.current.querySelectorAll("item")));
+//     //       const scrollHandler = (e) => {
+//     //         console.log(e);
+//     //       };
+//     //       el.current.addEventListener("scroll", scrollHandler);
+//     //       return () => {
+//     //         el.current.removeEventListener("scroll", scrollHandler);
+//     //       };
+//   }
+// }, []);
+
+//   return <Child ref={el} />;
+// };
+
+// useEffect(() => {
+// const container: HTMLElement = document.querySelector(".container");
+// const innerContainer: HTMLElement =
+//   document.querySelector(".items-container");
+
+// console.log(innerContainer, container);
+// innerContainer.addEventListener("onkeydown", (e: any) => {
+//   console.log(888);
+// });
+
+// // innerContainer.onkeydown = checkKey;
+
+// container.addEventListener("onkeydown",
+
+// (e: any)=> {
+//   e = e || window.event;
+
+//   if (e.keyCode == "38") {
+//     // up arrow
+//   } else if (e.keyCode == "40") {
+//     // down arrow
+//   } else if (e.keyCode == "37") {
+//     // left arrow
+//   } else if (e.keyCode == "39") {
+//     // right arrow
+//   }
+// }
+// })
+// }, []);
 
 // document.onkeydown = checkKey;
 

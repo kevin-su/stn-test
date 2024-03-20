@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 
-type HistoryPushProps = {
+export type HistoryPushProps = {
   url: string;
   state?: object;
   title?: string;
@@ -16,8 +16,8 @@ type HistoryPushProps = {
 type RouterContextProps = {
   historyPush: (
     url: HistoryPushProps["url"],
-    title: HistoryPushProps["title"],
-    state: HistoryPushProps["state"]
+    title?: HistoryPushProps["title"],
+    state?: HistoryPushProps["state"]
   ) => void;
 };
 
@@ -50,6 +50,7 @@ export function Router({ routes }: RouteProps): JSX.Element {
       },
     });
     document.dispatchEvent(pushChangeEvent);
+
     return window.history.pushState(state, title, url);
   };
 
@@ -58,14 +59,6 @@ export function Router({ routes }: RouteProps): JSX.Element {
     ({ detail: { url = "" } = {} }: any) => routeChange(url),
     false
   );
-
-  // const value = useMemo(
-  //   () =>
-  //     ({
-  //       historyPush,
-  //     } as any),
-  //   []
-  // );
 
   const value = {
     historyPush,
@@ -87,6 +80,18 @@ export function Router({ routes }: RouteProps): JSX.Element {
     },
     [routePath]
   );
+
+  useEffect(() => {
+    window.addEventListener("keydown", function (event) {
+      const key = event.key; // const {key} = event; ES6+
+      if (key === "Backspace" || key === "Delete") {
+        window.history.back();
+        return false;
+      }
+    });
+
+    window.history.pushState(null, "home", "/");
+  }, []);
 
   useEffect(() => {
     routeChange(window.location.hash);
