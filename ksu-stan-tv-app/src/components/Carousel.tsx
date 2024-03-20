@@ -1,9 +1,8 @@
 import "./Carousel.scss";
 
-import { ProgramCard, ProgramCardProps } from "./ProgramCard";
 import { useEffect, useRef } from "react";
 
-export function Carousel({ data = [] }: { data: Array<ProgramCardProps> }) {
+export function Carousel({ children }: { children: any }) {
   // const innerContainer = useRef(null);
 
   // const parent = () => {
@@ -56,10 +55,6 @@ export function Carousel({ data = [] }: { data: Array<ProgramCardProps> }) {
   // })
   // }, []);
 
-  if (!data.length) {
-    return null;
-  }
-
   function handleArrowKeyNav(e: any): void {
     if (e.keyCode === "37") {
       console.log("left");
@@ -71,14 +66,22 @@ export function Carousel({ data = [] }: { data: Array<ProgramCardProps> }) {
   return (
     <div className="container">
       <div className="items-container" onKeyDown={handleArrowKeyNav}>
-        {data.map(({ image, id, title }: ProgramCardProps) => (
-          <div className="item" key={`carousel-${id}`}>
-            <ProgramCard id={id} image={image} title={title} />
-          </div>
-        ))}
+        {children}
       </div>
     </div>
   );
+
+  // return (
+  //   <div className="container">
+  //     <div className="items-container" onKeyDown={handleArrowKeyNav}>
+  //       {data.map(({ image, id, title }: ProgramCardProps) => (
+  //         <div className="item" key={`carousel-${id}`}>
+  //           <ProgramCard id={id} image={image} title={title} />
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // );
 }
 
 // document.onkeydown = checkKey;

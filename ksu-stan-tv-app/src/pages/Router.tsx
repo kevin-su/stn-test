@@ -1,9 +1,9 @@
 import {
-  Fragment,
   createContext,
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 
@@ -83,7 +83,6 @@ export function Router({ routes }: RouteProps): JSX.Element {
   const routeChange = useCallback(
     (hash: string) => {
       const locationHash = hash.slice(1).split("/").filter(Boolean)?.[0] || "/";
-
       locationHash !== routePath && setRoutePath(locationHash);
     },
     [routePath]
@@ -100,8 +99,10 @@ export function Router({ routes }: RouteProps): JSX.Element {
           routePath &&
           ((routePath === "/" && routePath === path) ||
             new RegExp(routePath).test(path))
-      ).element) ||
+      )?.element) ||
     null;
+
+  console.log(88);
 
   return (
     <RouterContext.Provider value={value}>{component}</RouterContext.Provider>

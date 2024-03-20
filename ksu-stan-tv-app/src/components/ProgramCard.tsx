@@ -1,7 +1,5 @@
 import "./Carousel.scss";
 
-import { Fragment, useEffect } from "react";
-
 export type ProgramCardProps = {
   id: number;
   image: string;
