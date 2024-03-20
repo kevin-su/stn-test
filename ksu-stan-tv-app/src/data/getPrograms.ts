@@ -13,7 +13,7 @@ export type ProgramProps = {
 export async function getPrograms() {
   try {
     const response = await fetch(
-      "https://raw.githubusercontent.com/ksu-app-dev/ksu-stan-tv-coding-challenge/master/reactjs/data.json"
+      "https://raw.githubusercontent.com/StreamCo/stan-tv-coding-challenge/master/reactjs/data.json"
     );
     return (await response.json()) as Array<ProgramProps>;
   } catch (e) {

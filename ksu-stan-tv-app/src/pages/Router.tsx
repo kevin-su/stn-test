@@ -4,7 +4,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 
@@ -60,13 +59,17 @@ export function Router({ routes }: RouteProps): JSX.Element {
     false
   );
 
-  const value = useMemo(
-    () =>
-      ({
-        historyPush,
-      } as any),
-    []
-  );
+  // const value = useMemo(
+  //   () =>
+  //     ({
+  //       historyPush,
+  //     } as any),
+  //   []
+  // );
+
+  const value = {
+    historyPush,
+  } as any;
 
   const [routePath, setRoutePath] = useState<string>(
     window.location.hash || "/"
@@ -79,7 +82,8 @@ export function Router({ routes }: RouteProps): JSX.Element {
 
   const routeChange = useCallback(
     (hash: string) => {
-      const locationHash = hash.slice(1) || "/";
+      const locationHash = hash.slice(1).split("/").filter(Boolean)?.[0] || "/";
+
       locationHash !== routePath && setRoutePath(locationHash);
     },
     [routePath]
@@ -89,14 +93,17 @@ export function Router({ routes }: RouteProps): JSX.Element {
     routeChange(window.location.hash);
   }, [routeChange]);
 
+  const component =
+    (routePath &&
+      routes.find(
+        ({ path }) =>
+          routePath &&
+          ((routePath === "/" && routePath === path) ||
+            new RegExp(routePath).test(path))
+      ).element) ||
+    null;
+
   return (
-    <RouterContext.Provider value={value}>
-      {routePath &&
-        routes.map(({ path, element }, i) => {
-          return routePath.includes(path) ? (
-            <Fragment key={`route-${path}-${i}`}>{element}</Fragment>
-          ) : null;
-        })}
-    </RouterContext.Provider>
+    <RouterContext.Provider value={value}>{component}</RouterContext.Provider>
   );
 }

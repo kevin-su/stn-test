@@ -1,0 +1,42 @@
+.program-detail {
+  display: flex;
+}
+
+.program-labels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.program-label-item {
+  position: relative;
+  margin-right: 16px;
+  padding-right: 16px;
+
+  &:after {
+    height: 10px;
+    display: block;
+    width: 1px;
+    background: #ffffff;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 30%;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+}
+
+.program-image {
+  width: 300px;
+  height: auto;
+}
+
+.program-description {
+}

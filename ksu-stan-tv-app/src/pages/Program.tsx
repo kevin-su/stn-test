@@ -1,3 +1,10 @@
+import { Header, ProgramDetail } from "components";
+
 export default function Program() {
-  return <>Program</>;
+  return (
+    <>
+      <Header />
+      <ProgramDetail />
+    </>
+  );
 }

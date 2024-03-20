@@ -8,7 +8,7 @@ export const pagesRoute = [
     element: <Home />,
   },
   {
-    path: "program",
+    path: "/program/:id",
     element: <Program />,
   },
 ] as Array<PageRouteProps>;
