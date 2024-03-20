@@ -107,8 +107,6 @@ export function Router({ routes }: RouteProps): JSX.Element {
       )?.element) ||
     null;
 
-  console.log(88);
-
   return (
     <RouterContext.Provider value={value}>{component}</RouterContext.Provider>
   );

@@ -8,8 +8,8 @@ export function Header(): JSX.Element {
       <a href={`/`} className="app-logo">
         <img src={image} alt="stan" />
       </a>
-      <nav>
-        <ul className="app-nav">
+      <nav className="app-nav">
+        <ul className="app-nav-list">
           <li>
             <a href="/">Home</a>
           </li>

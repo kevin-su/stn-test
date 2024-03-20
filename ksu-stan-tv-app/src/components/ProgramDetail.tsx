@@ -3,7 +3,7 @@ import "./programDetail.scss";
 import { ProgramProps } from "data";
 import { useProgram } from "hooks";
 
-export function ProgramDetail(): any {
+export function ProgramDetail(): JSX.Element {
   const id: ProgramProps["id"] = +window.location.hash.split("/").pop();
   const {
     title = "",
@@ -24,9 +24,9 @@ export function ProgramDetail(): any {
   return (
     title && (
       <div className="program-detail">
-        <figure className="program-figure">
+        <div className="program-figure">
           <img className="program-image" src={image} alt={title} />
-        </figure>
+        </div>
         <div>
           <h1 className="program-title">{title}</h1>
           <ul className="program-labels">

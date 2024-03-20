@@ -1,5 +1,42 @@
 .program-detail {
   display: flex;
+  flex-direction: column;
+  padding: 12px;
+
+  @media screen and (min-width: 720px) {
+    flex-direction: row;
+  }
+
+  > * {
+    @media screen and (min-width: 720px) {
+      margin-right: 24px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.program-title {
+  margin: 0;
+}
+
+.program-figure {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 720px) {
+    width: 500px;
+  }
+  @media screen and (min-width: 1080px) {
+    width: 300px;
+  }
+}
+
+.program-image {
+  width: 100%;
+  height: auto;
 }
 
 .program-labels {
@@ -9,6 +46,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .program-label-item {
   position: relative;
@@ -30,12 +68,11 @@
     margin-right: 0;
     padding-right: 0;
     border-right: 0;
-  }
-}
 
-.program-image {
-  width: 300px;
-  height: auto;
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .program-description {
