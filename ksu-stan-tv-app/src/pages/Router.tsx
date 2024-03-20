@@ -90,7 +90,7 @@ export function Router({ routes }: RouteProps): JSX.Element {
       }
     });
 
-    window.history.pushState(null, "home", "/");
+    !window.location.hash && window.history.pushState(null, "home", "/");
   }, []);
 
   useEffect(() => {

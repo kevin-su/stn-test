@@ -42,5 +42,10 @@
   },
   "devDependencies": {
     "node-sass": "^7.0.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/src/**/?(*.)+(spec|test).[tj]s?(x)"
+    ]
   }
 }

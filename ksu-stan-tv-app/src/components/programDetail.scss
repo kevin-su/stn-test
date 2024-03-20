@@ -1,4 +1,4 @@
-.program-detail {
+.program-detail-container {
   display: flex;
   flex-direction: column;
   padding: 12px;
@@ -18,8 +18,13 @@
   }
 }
 
+.program-detail {
+  min-width: 300px;
+}
+
 .program-title {
-  margin: 0;
+  margin: 0 0 12px 0;
+  min-width: 150px;
 }
 
 .program-figure {
@@ -47,6 +52,7 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
+  min-width: 200px;
 }
 .program-label-item {
   position: relative;
@@ -76,6 +82,7 @@
 }
 
 .program-description {
+  min-height: 100px;
   @media screen and (min-width: 1080px) {
     width: 40%;
   }
