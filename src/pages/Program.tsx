@@ -1,10 +1,5 @@
-import { Header, ProgramDetail } from "components";
+import { ProgramDetail } from "components";
 
 export default function Program() {
-  return (
-    <div className="app-template">
-      <Header />
-      <ProgramDetail />
-    </div>
-  );
+  return <ProgramDetail />;
 }
