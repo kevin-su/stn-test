@@ -6,12 +6,6 @@ import {
   useState,
 } from "react";
 
-export type HistoryPushProps = {
-  url: string;
-  state?: object;
-  title?: string;
-};
-
 export type PageRouteProps = {
   path: string;
   element: JSX.Element;

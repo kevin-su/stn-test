@@ -3,7 +3,7 @@
 In the app built challenge, I tried to cover all the requirements, by break down into priorities to completed 2 pages of UI. following are the highlight of solutions.
 
 - Started with create a typescript based React app, without use any additional add on plugin tools.
-- Create a simple page route - actual most technical challenge this is part of the build, personal I found it challenge on working html5 history handling, which normal not required to do in real world app build, but this enough to cover 2 pages view navigation.
+- Create a simple page route to cover 2 pages view navigation.
 - Data fetch with Proxy data used a cache to handle request data once.
 - Carousel UI, originally was think to mimic Slick Carousel, but after compare it with my previous worked video streaming sites, the carousel in ABC iView and Optus sport, Subhub, end up use simple html css scroll without custom built interactive(which something to be improve add on features), and result also able to navigate with keyboard
 - Responsive UI mobile first with some break points applied
