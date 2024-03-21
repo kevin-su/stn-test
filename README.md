@@ -1,46 +1,15 @@
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In the app built challenge, I tried to cover all the requirements, by break down into priorities to completed 2 pages of UI. following are the highlight of solutions.
 
-## Available Scripts
+- Started with create a typescript based React app, without use any additional add on plugin tools.
+- Create a simple page route - actual most technical challenge this is part of the build, personal I found it challenge on working html5 history handling, which normal not required to do in real world app build, but this enough to cover 2 pages view navigation.
+- Data fetch with Proxy data used a cache to handle request data once.
+- Carousel UI, originally was think to mimic Slick Carousel, but after compare it with my previous worked video streaming sites, the carousel in ABC iView and Optus sport, Subhub, end up use simple html css scroll without custom built interactive(which something to be improve add on features), and result also able to navigate with keyboard
+- Responsive UI mobile first with some break points applied
+- Rest are the straight forward html and css UI build.
+- Demonstrated a unit test, skeleton(didn't complete), did not complete error handling
 
-In the project directory, you can run:
+## Video Demo
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://capture.dropbox.com/g40i41e1g4dT0SGQ
