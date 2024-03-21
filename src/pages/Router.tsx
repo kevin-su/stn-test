@@ -3,7 +3,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 
@@ -11,14 +10,6 @@ export type HistoryPushProps = {
   url: string;
   state?: object;
   title?: string;
-};
-
-type RouterContextProps = {
-  historyPush: (
-    url: HistoryPushProps["url"],
-    title?: HistoryPushProps["title"],
-    state?: HistoryPushProps["state"]
-  ) => void;
 };
 
 export type PageRouteProps = {
@@ -30,40 +21,11 @@ type RouteProps = {
   routes: Array<PageRouteProps>;
 };
 
-const RouterContext = createContext<RouterContextProps>({
-  historyPush: () => {},
-});
+const RouterContext = createContext({});
 
 export const useRouter = () => useContext(RouterContext);
 
 export function Router({ routes }: RouteProps): JSX.Element {
-  const historyPush = (
-    url: HistoryPushProps["url"],
-    title: HistoryPushProps["title"] = "",
-    state: HistoryPushProps["state"] = {}
-  ) => {
-    const pushChangeEvent = new CustomEvent("onpushstate", {
-      detail: {
-        state,
-        title,
-        url,
-      },
-    });
-    document.dispatchEvent(pushChangeEvent);
-
-    return window.history.pushState(state, title, url);
-  };
-
-  document.addEventListener(
-    "onpushstate",
-    ({ detail: { url = "" } = {} }: any) => routeChange(url),
-    false
-  );
-
-  const value = {
-    historyPush,
-  } as any;
-
   const [routePath, setRoutePath] = useState<string>(
     window.location.hash || "/"
   );
@@ -108,6 +70,6 @@ export function Router({ routes }: RouteProps): JSX.Element {
     null;
 
   return (
-    <RouterContext.Provider value={value}>{component}</RouterContext.Provider>
+    <RouterContext.Provider value={{}}>{component}</RouterContext.Provider>
   );
 }
